@@ -1,5 +1,5 @@
 import express from "express";
-import { createNote, deleteNote, getAllNotes, updateNote } from "../controllers/notesController.js";
+import { createNote, deleteNote, getAllNotes, getNoteById, updateNote } from "../controllers/notesController.js";
 
 const router = express.Router(); 
 
@@ -7,6 +7,8 @@ const router = express.Router();
 // An end point is a combination of a URL + HTTP method that lets the client interact with a specific resource on the server.
 
 router.get("/", getAllNotes);
+
+router.get("/:id", getNoteById);
 
 router.post("/", createNote);
 

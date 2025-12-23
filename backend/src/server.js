@@ -12,6 +12,9 @@ const PORT = process.env.PORT || 5001;
 
 connectDB();
 
+// middleware
+app.use(express.json());
+
 app.use("/api/notes", notesRoutes);
 
 
@@ -19,4 +22,3 @@ app.listen(PORT, () => {
   console.log("Server running on PORT", PORT);
 });
 
-// mongodb+srv://hemadhami365_db_user:30ZVTcXUGaCsMvXB@cluster0.0xiwgu2.mongodb.net/?appName=Cluster0

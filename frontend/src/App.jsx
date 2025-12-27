@@ -6,8 +6,15 @@ import NoteDetailPage from './pages/NoteDetailPage.jsx'
 
 const App = () => {
   return (
-  <div>
-    <button onClick={() => toast.success("Congrats!")}>Click me</button>
+  <div data-theme="forest">
+    <button className="btn btn-primary">Click me</button>
+    <button className="btn">Button</button>
+<button className="btn btn-neutral">Neutral</button>
+<button className="btn btn-primary">Primary</button>
+<button className="btn btn-secondary">Secondary</button>
+<button className="btn btn-accent">Accent</button>
+<button className="btn btn-ghost">Ghost</button>
+<button className="btn btn-link">Link</button>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/create" element={<CreatePage />} />

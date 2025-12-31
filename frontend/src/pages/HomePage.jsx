@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import RatelimitedUI from '../components/RatelimitedUI';
 import { useEffect } from 'react';
 import axios from 'axios';
-import { toast } from 'react-hot-toast';
+import  toast  from 'react-hot-toast';
 import NoteCard from '../components/NoteCard';
 
 

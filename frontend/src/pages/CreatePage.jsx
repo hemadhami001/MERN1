@@ -15,10 +15,10 @@ const CreatePage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    if (!title.trim() || !content.trim()) {
-      toast.error("All fields are required");
-      return;
-    }
+    // if (!title.trim() || !content.trim()) {
+    //   toast.error("All fields are required");
+    //   return;
+    // }
     setLoading(true);
     try {
       await axios.post("http://localhost:5001/api/notes", { title, content });
@@ -26,8 +26,15 @@ const CreatePage = () => {
       nagivate('/');
     } catch (error) {
       console.error("Error creating note:", error);
-      toast.error("Failed to create note");
-    } finally {
+      if(error.response.status === 429){
+        toast.error("Too many requests. Please slow down.", { 
+          duration: 4000,
+          icon: '⏳',
+         });
+      } else {
+        toast.error("Failed to create note");
+      }
+     } finally {
       setLoading(false);
     }
   }

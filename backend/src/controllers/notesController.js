@@ -37,7 +37,6 @@ export async function createNote(req, res) {
        console.error("Error in createNote controller", error);
          res.status(500).json({ message: "Internal Server Error" }); 
     }
-    res.status(201).json({ message: "Note created successfully" });
 }
 
 export async function updateNote(req, res) {
